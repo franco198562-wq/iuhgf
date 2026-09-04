@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Staff Editor — The Aegis Institute</title>
+
+  <link rel="stylesheet" href="/styles.css">
+
+</head>
+
+<body class="admin-page">
+
+<header class="site-header">
+
+  <a href="/" class="brand">
+    <span class="brand-logo">A</span>
+
+    <span class="brand-text">
+      <strong>THE AEGIS INSTITUTE</strong>
+    </span>
+  </a>
+
+  <div class="admin-user">
+
+    <span id="adminUser">
+      Checking account...
+    </span>
+
+    <button id="logoutBtn" class="staff-login">
+      Log Out
+    </button>
+
+  </div>
+
+</header>
+
+
+<main>
+
+  <section class="admin-header">
+
+    <div class="container">
+
+      <span class="eyebrow">
+        STAFF PORTAL
+      </span>
+
+      <h1>
+        Website Editor
+      </h1>
+
+      <p>
+        Edit published Aegis Institute content.
+        Changes are stored in the portal database.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <section class="section">
+
+    <div class="container">
+
+      <div id="accessDenied" class="admin-message hidden">
+
+        <h2>
+          Access denied
+        </h2>
+
+        <p>
+          Your Discord account is not authorised to edit this website.
+        </p>
+
+        <a href="/" class="button button-secondary">
+          Return to website
+        </a>
+
+      </div>
+
+
+      <div id="editor" class="editor hidden">
+
+        <div class="editor-nav">
+
+          <button class="editor-tab active" data-tab="homepage">
+            Homepage
+          </button>
+
+          <button class="editor-tab" data-tab="services">
+            Services
+          </button>
+
+          <button class="editor-tab" data-tab="work">
+            Our Work
+          </button>
+
+          <button class="editor-tab" data-tab="contact">
+            Contact
+          </button>
+
+        </div>
+
+
+        <!-- HOMEPAGE -->
+
+        <section class="editor-panel active" id="tab-homepage">
+
+          <h2>
+            Homepage
+          </h2>
+
+          <div class="editor-card">
+
+            <label>
+              Hero title
+
+              <textarea id="editHeroTitle"></textarea>
+            </label>
+
+
+            <label>
+              Hero description
+
+              <textarea id="editHeroText"></textarea>
+            </label>
+
+
+            <label>
+              Hero card title
+
+              <input id="editHeroCardTitle">
+            </label>
+
+
+            <label>
+              Hero card description
+
+              <textarea id="editHeroCardText"></textarea>
+            </label>
+
+
+            <button class="button button-primary" id="saveHomepage">
+              Save Homepage
+            </button>
+
+          </div>
+
+        </section>
+
+
+        <!-- SERVICES -->
+
+        <section class="editor-panel" id="tab-services">
+
+          <h2>
+            Services
+          </h2>
+
+          <div id="servicesEditor"></div>
+
+          <button
+            class="button button-primary"
+            id="addService"
+          >
+            Add Service
+          </button>
+
+          <button
+            class="button button-secondary"
+            id="saveServices"
+          >
+            Save Services
+          </button>
+
+        </section>
+
+
+        <!-- WORK -->
+
+        <section class="editor-panel" id="tab-work">
+
+          <h2>
+            Our Work
+          </h2>
+
+          <div id="workEditor"></div>
+
+          <button
+            class="button button-primary"
+            id="addWork"
+          >
+            Add Work Item
+          </button>
+
+          <button
+            class="button button-secondary"
+            id="saveWork"
+          >
+            Save Work
+          </button>
+
+        </section>
+
+
+        <!-- CONTACT -->
+
+        <section class="editor-panel" id="tab-contact">
+
+          <h2>
+            Contact
+          </h2>
+
+          <div class="editor-card">
+
+            <label>
+              Contact heading
+
+              <input id="editContactTitle">
+            </label>
+
+
+            <label>
+              Contact description
+
+              <textarea id="editContactText"></textarea>
+            </label>
+
+
+            <button
+              class="button button-primary"
+              id="saveContact"
+            >
+              Save Contact
+            </button>
+
+          </div>
+
+        </section>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<script src="/app.js"></script>
+
+</body>
+</html>
